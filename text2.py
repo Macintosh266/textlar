@@ -1,6 +1,7 @@
 import time
 from itertools import count
 
+# Dekorator — bu boshqa funksiyani qabul qilib, uni o‘zgartirgan yoki qo‘shimcha ish qilgan holda yangi funksiyani qaytaruvchi funksiya.
 
 def decorater_func(func):
     def wrapper():
