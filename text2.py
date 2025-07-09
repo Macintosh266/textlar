@@ -5,6 +5,7 @@
 import time
 from itertools import count
 
+# Dekorator — bu boshqa funksiyani qabul qilib, uni o‘zgartirgan yoki qo‘shimcha ish qilgan holda yangi funksiyani qaytaruvchi funksiya.
 
 # Dekorator — bu funksiyani argument sifatida qabul qiluvchi va yangilangan funksiyani qaytaruvchi funksiya.
 
@@ -35,3 +36,4 @@ nums()
 # Vaqtni o‘lchash (timing)
 # Cache (keshlash)
 # Retry mexanizmlari
+
