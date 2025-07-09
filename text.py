@@ -1,3 +1,11 @@
+#  Foydalanish holatlari
+
+# asyncpg juda samarali quyidagi holatlarda:
+# FastAPI yoki aiohttp bilan real-time backend yaratish
+# Ko‘p parallel so‘rovlar bajarish
+# ORM'siz to‘g‘ridan-to‘g‘ri SQL bilan ishlash
+
+
 from typing import Union
 
 import asyncpg
@@ -178,3 +186,12 @@ class Database:
         sql = f"UPDATE products_order SET  count={count} WHERE id={item_id}  "
         return await self.execute(sql, fetchval=True)
 
+#  Diqqat!
+# 
+# asyncpg faqat asinxron muhitda ishlaydi (async def, await)
+# psycopg2 kabi sinkron kutubxonalar bilan bir xil emas
+# ORMs (masalan, SQLAlchemy) kabi ORM qulayliklarini bermaydi, lekin ancha yengil va tez
+
+
+# O'rnatish (terminalda):
+# pip install asyncpg

@@ -1,5 +1,12 @@
+# Python'da dekoratorlar (decorators) — bu funksiyalarga yoki klasslarga qo‘shimcha 
+# imkoniyatlar berish uchun ishlatiladigan funksiya yoki klasslardir.
+# Ular, mavjud funksiyani o‘zgartirmasdan, uning funksionalligini kengaytirishga imkon beradi.
+
 import time
 from itertools import count
+
+
+# Dekorator — bu funksiyani argument sifatida qabul qiluvchi va yangilangan funksiyani qaytaruvchi funksiya.
 
 
 def decorater_func(func):
@@ -20,3 +27,11 @@ def nums():
         count+=1
 
 nums()
+
+# Dekoratorlar qayerda foydali?
+# 
+# Log yozish (logging)
+# Ruxsatni tekshirish (authentication)
+# Vaqtni o‘lchash (timing)
+# Cache (keshlash)
+# Retry mexanizmlari
