@@ -19,8 +19,6 @@
 # Iterator iterabledagi joriy elementni va keyingi elementni doim bilib turadi.
 
 # Iterable dan iterator yaratish uchun uni iter() funksiyasiga solamiz:
-
-# Iterable dan iterator yaratish uchun uni iter() funksiyasiga solamiz:
 # 1-misollar
 
 # a = [1, 2, 4]
