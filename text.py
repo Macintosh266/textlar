@@ -1,5 +1,9 @@
 #  Foydalanish holatlari
 
+# Agar siz biror kodni ishlatsangiz va u 3 soniya kutsa (masalan, tarmoqdan malumot olayotganda),
+# oddiy kod bu vaqt ichida hech narsa qila olmaydi.
+# Ammo asynchronous kod esa kutayotgan paytda boshqa ishlarni bajarib turishi mumkin.
+
 # asyncpg juda samarali quyidagi holatlarda:
 # FastAPI yoki aiohttp bilan real-time backend yaratish
 # Ko‘p parallel so‘rovlar bajarish
