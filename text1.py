@@ -1,5 +1,7 @@
 # # # Scope of variable - o’zgaruvchining qamrovi
-# # # Global Scope -
+# # # Global o‘zgaruvchi – bu funksiya tashqarisida e’lon qilingan va butun dastur bo‘ylab foydalanilishi mumkin bo‘lgan o‘zgaruvchi.
+
+# Unga istalgan funksiyadan murojaat qilish mumkin.
 # a = 5  # global
 
 
