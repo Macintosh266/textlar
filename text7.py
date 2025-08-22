@@ -124,3 +124,70 @@ print(circle.area())  # 78.5
 # Oson kengaytiriladi (yangi obyektlar qo‘shish).
 
 # Real hayotdagi obyektlarni modellashtirish qulay.
+
+# ======================================================
+# ======================================================
+
+# 🧠 Getter va Setter nima?
+
+# Getter va Setter – bu obyekt (klass) ichidagi xususiy (private) qiymatlarni nazorat bilan olish va o‘zgartirish uchun ishlatiladigan metodlar (funksiyalar)dir.
+
+# 📌 Asosiy maqsadlari:
+
+# Encapsulation (inkapsulyatsiya) tamoyilini qo‘llash – ya'ni ma'lumotlarni bevosita emas, balki maxsus metodlar orqali boshqarish.
+
+# Ma'lumotga kirish va o‘zgartirishda nazorat o‘rnatish.
+
+# Xavfsizlik va barqarorlikni ta'minlash (nojo‘ya qiymatlardan himoya qilish).
+
+# 🔒 Misol: Python dasturlash tilida
+class Student:
+    def __init__(self, name, age):
+        self.__name = name     # private o'zgaruvchi
+        self.__age = age       # private o'zgaruvchi
+
+    # Getter - qiymatni olish
+    def get_name(self):
+        return self.__name
+
+    def get_age(self):
+        return self.__age
+
+    # Setter - qiymatni o'zgartirish
+    def set_name(self, name):
+        self.__name = name
+
+    def set_age(self, age):
+        if age >= 0:
+            self.__age = age
+        else:
+            print("Yosh manfiy bo'lishi mumkin emas!")
+
+# 📋 Foydalanish:
+student = Student("Ali", 20)
+
+print(student.get_name())   # Ali
+student.set_age(-5)         # Xato: Yosh manfiy bo'lishi mumkin emas!
+student.set_age(21)
+print(student.get_age())    # 21
+
+# ⚙️ Getter va Setter-larni zamonaviy usulda – @property bilan ham yozish mumkin (Python):
+class Student:
+    def __init__(self, name):
+        self.__name = name
+
+    @property
+    def name(self):   # getter
+        return self.__name
+
+    @name.setter
+    def name(self, value):   # setter
+        self.__name = value
+
+# 💡 Qayerda ishlatiladi?
+
+# OOP (Object Oriented Programming) dasturlashda.
+
+# Har qanday til: Python, Java, C#, JavaScript va hokazo.
+
+# Ma'lumotlarga to'g'ridan-to'g'ri emas, chegaralangan va nazoratli kirishni ta'minlash uchun.
