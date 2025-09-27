@@ -1,3 +1,7 @@
+"Meto programming"-bu programmislar ishlatishi uchun yozilgan ko'dlar
+masalan django
+
+
 # OOP (Object-Oriented Programming – obyektga yo‘naltirilgan dasturlash) – bu dasturlash paradigmasi bo‘lib, unda dastur obyektlar va ularning o‘zaro aloqalari orqali quriladi. OOP dasturlashni yanada modulli, tushunarli va kengaytiriladigan qiladi.
 
 
