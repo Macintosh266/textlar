@@ -57,6 +57,15 @@ class BankAccount:
     def get_balance(self):
         return self.__balans
 
+#==== Inkapsulyatsiya darajalari (Python’da) ====
+
+# public → hamma joyda ochiq (self.name)
+
+# _protected → faqat ichki va voris sinflar uchun (self._name)
+
+# __private → tashqaridan kira olmaydi (self.__name)
+
+
 # 2. Inheritance (merosxo‘rlik)
 
 # Bir klass boshqa klassdan xususiyatlarni meros qilib oladi.
