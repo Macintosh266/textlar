@@ -165,19 +165,156 @@ c.skill()   # MRO (Method Resolution Order) bo‘yicha birinchi Father’dan ola
 
 # Bir xil metod nomi turli klasslarda turlicha ishlaydi.
 
+# 🧠 1️⃣ Polimorfizm nima?
+
+# Polimorfizm — so‘zma-so‘z tarjimada “ko‘p shakllilik” degan ma’noni anglatadi.
+# Ya’ni bitta amal yoki metod turli sinflarda turlicha ishlaydi.
+
+# Oddiy qilib aytganda: “Bir xil nomdagi metod — har xil obyektlarda har xil natija beradi.”
+
+# 🎯 2️⃣ Maqsadi
+
+# Polimorfizmning asosiy maqsadi —
+# 👉 Kodni moslashuvchan va kengaytiriladigan qilish.
+# 👉 Har xil obyektlar bilan bir xil interfeys orqali ishlash imkonini beradi.
+
+# 🐍 3️⃣ Python misolida
+# 🧩 Misol 1: Metod nomi bir xil, lekin har xil xulq
+class Dog:
+    def sound(self):
+        return "Vov-vov"
 
 class Cat:
     def sound(self):
-        print("Miyov!")
+        return "Miyov-miyov"
 
-class Dog:
-    def sound(self):
-        print("Vov-vov!")
+# Polimorfizm ishlatilmoqda:
+for animal in [Dog(), Cat()]:
+    print(animal.sound())
 
-for animal in [Cat(), Dog()]:
-    animal.sound()
-# Miyov!
-# Vov-vov!
+
+# 📤 Natija:
+
+# Vov-vov
+# Miyov-miyov
+
+
+# Bu yerda sound() metodi bir xil nomda, lekin har bir sinfda turlicha ishlaydi.
+
+# 🧩 Misol 2: Meros orqali (Overriding)
+class Animal:
+    def speak(self):
+        print("Hayvon tovushi")
+
+class Dog(Animal):
+    def speak(self):
+        print("Vov-vov")
+
+class Cat(Animal):
+    def speak(self):
+        print("Miyov-miyov")
+
+animals = [Dog(), Cat(), Animal()]
+
+for a in animals:
+    a.speak()
+
+
+# 📤 Natija:
+
+# Vov-vov
+# Miyov-miyov
+# Hayvon tovushi
+
+
+# 👉 Bu method overriding deb ataladi — ota-sinfdagi metodni bola-sinf qayta aniqlaydi.
+# Bu runtime polymorphism deyiladi (ya’ni ish vaqtida aniqlanadi).
+
+# 🧩 Misol 3: Funksiya darajasida (Duck Typing)
+
+# Python’da statik tur aniqlanmaganligi sababli, “polimorfizm” tabiiy tarzda ishlaydi.
+
+class Bird:
+    def fly(self):
+        print("Qush uchmoqda")
+
+class Airplane:
+    def fly(self):
+        print("Samolyot uchmoqda")
+
+class Rocket:
+    def fly(self):
+        print("Raketa uchmoqda")
+
+# Bir xil funksiyadan foydalanamiz
+def lift_off(obj):
+    obj.fly()
+
+for obj in [Bird(), Airplane(), Rocket()]:
+    lift_off(obj)
+
+
+# 📤 Natija:
+
+# Qush uchmoqda
+# Samolyot uchmoqda
+# Raketa uchmoqda
+
+
+# 👉 Bu duck typing deyiladi:
+
+# “Agar u o‘rdak kabi yurib, o‘rdak kabi qichqirsa — demak, u o‘rdak.”
+# Ya’ni obyekt turi emas, balki unda kerakli metod borligi muhim.
+
+# ⚙️ 4️⃣ Polimorfizm turlari
+# Turi	Tushuntirish	Misol
+# Compile-time (Static)	Dastur bajarilishidan oldin aniqlanadi	Method overloading (Java, C++)
+# Run-time (Dynamic)	Dastur ish paytida aniqlanadi	Method overriding (Python, Java)
+
+# Python’da asosan dynamic polymorphism ishlatiladi.
+
+# 🧩 5️⃣ Method Overloading (Python’da “cheklangan”)
+
+# Python’da rasmiy method overloading yo‘q, lekin uni *args orqali taqlid qilish mumkin:
+
+class Math:
+    def add(self, *args):
+        return sum(args)
+
+m = Math()
+print(m.add(2, 3))
+print(m.add(2, 3, 4))
+
+
+# 📤 Natija:
+
+# 5
+# 9
+
+# 💡 6️⃣ Real hayotdagi analogiya
+
+# Biror so‘z har xil kontekstda turlicha ma’no beradi:
+
+# “Run” – odam yuguradi
+
+# “Run a program” – dastur ishga tushadi
+
+# “Run a company” – kompaniya boshqariladi
+
+# 👉 Bu ham polimorfizm: bitta so‘z (metod) – turli xatti-harakatlar (implementatsiya).
+
+# 🔚 Xulosa:
+
+# Polimorfizm — bu bir xil metod yoki funksiya turli obyektlarda turlicha ishlashidir.
+
+# Afzalliklari:
+
+# Kodni qayta ishlatish oson
+
+# Tizimni kengaytirish oson
+
+# Katta loyihalarda moslashuvchanlikni oshiradi
+
 
 # 4. Abstraction (abstraksiya)
 
