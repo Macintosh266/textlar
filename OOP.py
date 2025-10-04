@@ -40,7 +40,9 @@ car2.drive()  # Oq Tesla haydamoqda...
 
 # 🔑 OOP ning asosiy prinsiplari:
 
-# 1. Encapsulation (inkapsulyatsiya)
+#==========================================================================
+#=================== 1. Encapsulation (inkapsulyatsiya) ===================
+#==========================================================================
 
 # Ma’lumotlarni yashirish va faqat kerakli metodlar orqali ularga murojaat qilish.
 
@@ -65,8 +67,9 @@ class BankAccount:
 
 # __private → tashqaridan kira olmaydi (self.__name)
 
-
-# 2. Inheritance (merosxo‘rlik)
+#=====================================================================
+#=================== 2. Inheritance (merosxo‘rlik) ===================
+#=====================================================================
 
 # Merosxo‘rlik orqali bir sinf (child, subclass) boshqa sinfning (parent, superclass) xususiyatlari va metodlarini o‘ziga oladi.
 # Ya’ni, yangi sinfni yozishda hamma narsani boshqatdan yozish shart emas — ota-sinfdagi kodni qayta ishlatish mumkin.
@@ -161,7 +164,9 @@ c.skill()   # MRO (Method Resolution Order) bo‘yicha birinchi Father’dan ola
 
 # Hybrid (aralash)
 
-# 3. Polymorphism (polimorfizm)
+#=====================================================================
+#=================== 3. Polymorphism (polimorfizm) ===================
+#=====================================================================
 
 # Bir xil metod nomi turli klasslarda turlicha ishlaydi.
 
@@ -315,8 +320,9 @@ print(m.add(2, 3, 4))
 
 # Katta loyihalarda moslashuvchanlikni oshiradi
 
-
-# 4. Abstraction (abstraksiya)
+#====================================================================
+#=================== 4. Abstraction (abstraksiya) ===================
+#====================================================================
 
 # Faqat kerakli funksionallikni ko‘rsatish, keraksiz tafsilotlarni yashirish.
 
