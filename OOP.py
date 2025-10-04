@@ -324,29 +324,107 @@ print(m.add(2, 3, 4))
 #=================== 4. Abstraction (abstraksiya) ===================
 #====================================================================
 
-# Faqat kerakli funksionallikni ko‘rsatish, keraksiz tafsilotlarni yashirish.
+# 🧠 1️⃣ Abstraksiya nima?
 
-# Python’da abc (Abstract Base Class) yordamida qilinadi.
+# Abstraksiya — bu murakkab narsalarni soddalashtirish, ya’ni foydalanuvchiga faqat zarur bo‘lgan ma’lumotni ko‘rsatish, qolgan keraksiz tafsilotlarni yashirishdir.
 
+# Qisqacha: “Nima qilish kerak?” degan savolga javob beradi, lekin “Qanday bajariladi?” deganini yashiradi.
 
+# 🏎 2️⃣ Hayotiy misol bilan
+
+# Tasavvur qiling siz mashinani haydayapsiz:
+
+# Siz gaz, tormoz, rul bilan ishlaysiz — bu interfeys (sizga ochiq qism).
+
+# Lekin mashinaning ichida dvigatel qanday ishlayotgani, yog‘ tizimi, karbyurator haqida bilishingiz shart emas — bu abstraksiya orqali yashirilgan qism.
+
+# 👉 Ya’ni, siz faqat kerakli funksiyalarni ishlatasiz, ichki mexanizm sizdan yashiringan.
+
+# 🐍 3️⃣ Python misolida Abstraksiya
+
+# Python’da abstraksiya odatda abstract class va interface orqali amalga oshiriladi.
+# Buning uchun abc (Abstract Base Class) moduli ishlatiladi.
+
+# 🧩 Misol 1: Abstract Class
 from abc import ABC, abstractmethod
 
-class Shape(ABC):
+# Abstract class
+class Animal(ABC):
+    
     @abstractmethod
-    def area(self):
-        pass
+    def sound(self):
+        pass   # bu metod faqat nomigagina mavjud, lekin tanasi yo‘q
 
-class Circle(Shape):
-    def init(self, r):
-        self.r = r
-    def area(self):
-        return 3.14 * self.r ** 2
+# Bola sinf (child class)
+class Dog(Animal):
+    def sound(self):
+        return "Vov-vov"
 
-circle = Circle(5)
-print(circle.area())  # 78.5
+class Cat(Animal):
+    def sound(self):
+        return "Miyov-miyov"
+
+# Foydalanish
+animals = [Dog(), Cat()]
+for a in animals:
+    print(a.sound())
 
 
-# ---
+📤 Natija:
+
+Vov-vov
+Miyov-miyov
+
+
+# 👉 Bu yerda:
+
+# Animal — abstrakt sinf (unda to‘liq metod yo‘q)
+
+# sound() — abstrakt metod (faqat nomi bor)
+
+# Dog, Cat — bu metodni real (aniq) qilib yozgan sinflar.
+
+# 🧩 Misol 2: Abstract sinfni to‘g‘ridan-to‘g‘ri chaqirish xatosi
+# a = Animal()  # ❌ bu xato beradi!
+
+
+# 📤 Natija:
+
+# TypeError: Can't instantiate abstract class Animal with abstract methods sound
+
+
+# 👉 Ya’ni abstrakt sinfni to‘g‘ridan-to‘g‘ri obyektga aylantirish mumkin emas — u faqat shablon (namuna) sifatida ishlatiladi.
+
+# ⚙️ 4️⃣ Abstraksiya bilan Inkapsulyatsiya farqi
+# Asosiy jihat	Abstraksiya	Inkapsulyatsiya
+# Maqsadi	Keraksiz tafsilotlarni yashirish	Ma’lumotlarni himoya qilish
+# Qanday amalga oshadi	Abstract class, interface	Private, protected atributlar
+# Foydalanuvchiga	Faqat kerakli metodlarni ko‘rsatadi	Ma’lumotlarga to‘g‘ridan-to‘g‘ri kirishni cheklaydi
+# Misol	“Mashina haydash” — ichki tizim yashirilgan	“Dvigatel ichki qismini himoya qilish”
+# 🎯 5️⃣ Afzalliklari
+
+# ✅ Kodni soddalashtiradi
+# ✅ Loyihani modulli va tushunarli qiladi
+# ✅ Har xil sinflar uchun yagona interfeys yaratadi
+# ✅ Kodni kengaytirish va test qilishni osonlashtiradi
+
+# 🧩 6️⃣ Real hayotdagi yana bir misol
+
+# Telefoningizni olaylik:
+
+# Sizda faqat tugmalar (call, camera, volume) bor — bu sizga ochiq interfeys.
+
+# Lekin kamera qanday ishlaydi, sensor qanday signal beradi — bular yashirin.
+# 👉 Bu abstraksiya.
+
+# 🔚 Xulosa:
+
+# Abstraksiya — bu OOP tamoyili bo‘lib, dasturchi foydalanuvchiga faqat kerakli funksiyalarni ko‘rsatadi va ichki ish jarayonini yashiradi.
+
+# 👉 Abstraksiya — nima qilish kerakligini aytadi,
+# Inkapsulyatsiya esa — qanday himoyalanishini belgilaydi.
+
+# ------------------------
 
 # ✅ OOP ning afzalliklari:
 
