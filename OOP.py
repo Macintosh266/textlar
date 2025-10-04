@@ -68,21 +68,98 @@ class BankAccount:
 
 # 2. Inheritance (merosxo‘rlik)
 
-# Bir klass boshqa klassdan xususiyatlarni meros qilib oladi.
+# Merosxo‘rlik orqali bir sinf (child, subclass) boshqa sinfning (parent, superclass) xususiyatlari va metodlarini o‘ziga oladi.
+# Ya’ni, yangi sinfni yozishda hamma narsani boshqatdan yozish shart emas — ota-sinfdagi kodni qayta ishlatish mumkin.
 
-# Kodni qayta yozmasdan foydalanish imkonini beradi.
+# 🟢 Merosxo‘rlikning asosiy turlari:
+# 1, Single Inheritance (Yagona meros)
 
+# Bitta bola sinf faqat bitta ota-sinfdan meros oladi.
 
 class Animal:
     def sound(self):
-        print("Hayvon tovush chiqarmoqda")
+        print("Hayvon tovushi")
+
+class Dog(Animal):   # faqat Animal’dan meros oldi
+    def sound(self):
+        print("Vov-vov")
+
+dog = Dog()
+dog.sound()  # Vov-vov
+
+# 2, Multilevel Inheritance (Ko‘p darajali meros)
+
+# Bir sinf boshqa sinfdan, u yana boshqasidan meros oladi → zanjir hosil bo‘ladi.
+
+class LivingThing:
+    pass
+
+class Animal(LivingThing):  # LivingThing dan meros oladi
+    pass
+
+class Dog(Animal):  # Animal dan meros oladi
+    pass
+
+
+# 👉 Bu yerda Dog → Animal → LivingThing zanjiri bor.
+
+# 3, Hierarchical Inheritance (Ierarxik meros)
+
+# Bitta ota-sinfdan bir nechta bola-sinflar meros oladi.
+
+class Animal:
+    def sound(self):
+        print("Hayvon tovushi")
 
 class Dog(Animal):
     def sound(self):
-        print("Vov-vov!")
+        print("Vov-vov")
 
-dog = Dog()
-dog.sound()  # Vov-vov!
+class Cat(Animal):
+    def sound(self):
+        print("Miyov-miyov")
+
+
+# 👉 Dog va Cat ikkalasi ham Animaldan meros olgan.
+
+# 4, Multiple Inheritance (Ko‘p ota-sinfli meros)
+
+# Bir bola-sinf bir nechta ota-sinfdan meros oladi.
+
+class Father:
+    def skill(self):
+        print("Otadan: Avtomobil haydash")
+
+class Mother:
+    def skill(self):
+        print("Onadan: Ovqat pishirish")
+
+class Child(Father, Mother):  # ikkala sinfdan meros
+    pass
+
+c = Child()
+c.skill()   # MRO (Method Resolution Order) bo‘yicha birinchi Father’dan oladi
+
+# 5, Hybrid Inheritance (Aralash meros)
+
+# Yuqoridagi turlarni aralashtirib ishlatish.
+# Masalan, multiple va multilevelni qo‘shib yuborish.
+
+# 👉 Bunda MRO (Method Resolution Order) muhim: ya’ni metodlarni qaysi tartibda qidirishi belgilanadi.
+
+# 🟣 Xulosa
+
+# OOP’da merosxo‘rlikning turlari:
+
+# Single (yagona)
+
+# Multilevel (zanjirli)
+
+# Hierarchical (ierarxik)
+
+# Multiple (ko‘p ota-sinfli)
+
+# Hybrid (aralash)
 
 # 3. Polymorphism (polimorfizm)
 
